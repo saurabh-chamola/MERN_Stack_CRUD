@@ -20,7 +20,9 @@ app.use(express.json());
 
 // route
 app.use(UserRoute)
-
+app.get("/healthz", (req, res) => {
+    res.status(200).send("RUNNING");
+});
 
 
 
