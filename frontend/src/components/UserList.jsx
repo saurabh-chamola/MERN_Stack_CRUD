@@ -11,7 +11,7 @@ const UserList = () => {
 
   const handleUser = async () => {
     await axios
-      .get("http://backend.backend.svc.cluster.local/users")
+      .get("http://backend/users")
       .then((res) => {
         setUsers(res.data);
       })
@@ -22,7 +22,7 @@ const UserList = () => {
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://backend.backend.svc.cluster.local/users/${id}`);
+      await axios.delete(`http://backend/users/${id}`);
       handleUser();
     } catch (error) {
       console.log(error);

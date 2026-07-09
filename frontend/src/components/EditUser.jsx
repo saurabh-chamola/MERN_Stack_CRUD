@@ -14,7 +14,7 @@ const EditUser = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5080/users/" + id);
+        const res = await axios.get("http://backend/users/" + id);
         setName(res.data.name);
         setEmail(res.data.email);
         setGender(res.data.gender);
@@ -29,7 +29,7 @@ const EditUser = () => {
     e.preventDefault();
 
     try{
-        await axios.patch(`http://localhost:5080/users/${id}` ,{
+        await axios.patch(`http://backend/users/${id}` ,{
             name,
             email,
             gender
